@@ -1,0 +1,86 @@
+# GeoMarvel-Exercise
+Fall 2016 Internship Exercise - Florida Sinkholes
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>Florida Sinkholes</title>
+
+<link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+<link rel="stylesheet" href="https://js.arcgis.com/4.0/esri/css/main.css">
+<link rel="stylesheet" href="https://js.arcgis.com/4.0/esri/css/calcite/calcite.css">
+
+<style>
+  html, body, #viewDiv {
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    width: 100%;
+  }
+  h1 {letter-spacing: 2px;
+  }
+</style>
+
+<script src="https://js.arcgis.com/4.0/"></script>
+<script>
+require([
+  "esri/WebMap",
+  "esri/views/MapView",
+  "esri/widgets/Search",
+  "esri/widgets/Locate",
+  "esri/widgets/Home",
+  "dojo/domReady!"
+], function(WebMap, MapView, Search, Locate, Home){
+  var webmap = new WebMap({
+    basemap: "dark-gray",
+	portalItem: {
+	  id: "939666bb2352406c950cb81c2c81ed89"
+	}
+  });
+  
+  var view = new MapView({
+    container: "viewDiv",
+    map: webmap,
+    center: [-82, 28],
+	zoom: 6.5
+	
+  });
+  
+  var searchWidget = new Search({
+    view: view
+  });
+  view.ui.add(searchWidget, {
+    position: "top-right",
+	index: 0
+  });
+  
+  var locateWidget = new Locate({
+    view: view,
+  });
+  locateWidget.startup();
+  view.ui.add(locateWidget, {
+    position: "top-left",
+	index: 1
+  });
+  
+  var homeWidget = new Home({
+    view: view,
+  });
+  view.ui.add(homeWidget, {
+   position: "top-left",
+   index: 0
+  });
+  
+ });
+</script>
+</head>
+<body>
+  <body class="calcite">
+	<h1><center><b>Florida Sinkholes</h1>
+  <div id="viewDiv"></div>
+  <script src="http://code.jquery.com/jquery.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+</body>
+</html>
