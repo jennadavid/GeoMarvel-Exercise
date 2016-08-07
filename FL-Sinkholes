@@ -8,7 +8,6 @@ Fall 2016 Internship Exercise - Florida Sinkholes
 <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
 <title>Florida Sinkholes</title>
 
-<link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
 <link rel="stylesheet" href="https://js.arcgis.com/4.0/esri/css/main.css">
 <link rel="stylesheet" href="https://js.arcgis.com/4.0/esri/css/calcite/calcite.css">
 
@@ -80,7 +79,5 @@ require([
   <body class="calcite">
 	<h1><center><b>Florida Sinkholes</h1>
   <div id="viewDiv"></div>
-  <script src="http://code.jquery.com/jquery.js"></script>
-  <script src="js/bootstrap.min.js"></script>
 </body>
 </html>
